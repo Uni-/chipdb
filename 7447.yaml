@@ -1,0 +1,62 @@
+---
+description:  BCD to 7-segment decoder/driver
+package:      DIP
+pincount:     16
+family:       "7400"
+datasheet:    "http://focus.ti.com/lit/ds/symlink/sn74ls47.pdf"
+pins:
+  - num:  1
+    sym:  B
+    desc: BCD input
+  - num:  2
+    sym:  C
+    desc: BCD input
+  - num:  3
+    sym:  ~LT
+    desc: lamp test
+  - num:  4
+    sym:  ~BI~/~RBO~
+    desc: blanking input and/or ripple-blanking output
+  - num:  5
+    sym:  ~RBI
+    desc: ripple-blanking input
+  - num:  6
+    sym:  D
+    desc: BCD input
+  - num:  7
+    sym:  A
+    desc: BCD input
+  - num:  8
+    sym:  GND
+    desc: ground
+  - num:  9
+    sym:  e
+    desc: segment output
+  - num:  10
+    sym:  d
+    desc: segment output
+  - num:  11
+    sym:  c
+    desc: segment output
+  - num:  12
+    sym:  b
+    desc: segment output
+  - num:  13
+    sym:  a
+    desc: segment output
+  - num:  14
+    sym:  g
+    desc: segment output
+  - num:  15
+    sym:  f
+    desc: segment output
+  - num:  16
+    sym:  Vcc
+    desc: supply voltage
+notes:
+  - This is for use with common cathode display. Pins for lit segments are high.
+  - To display 6 and 9 with tails, use 74247.
+  - When ~LT is open, all segment outputs are forced on.
+  - ~BI must be open or held high for the decoded output. As ~RBI is open or high, leading/trailing zero is suppressed, preventing blinks. If not, all segment outputs are off.
+  - Display does not blank even for the inputs greater than 9.
+...
